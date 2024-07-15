@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled/data/models/countries.dart';
-import '../business_logic/cubit/countries_cubit.dart';
 
 class CountryDetailsScreen extends StatelessWidget {
   final Country country;
