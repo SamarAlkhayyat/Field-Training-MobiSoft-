@@ -11,20 +11,11 @@ class CountryDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<CountriesCubit>(context).getAllCountries();
     return Scaffold(
       appBar: AppBar(
         title: Text("employee: ${country.employee_code}", style: TextStyle(color: Colors.yellow.shade100),),
       ),
-      body: BlocBuilder<CountriesCubit, CountriesState>(
-        builder: (context, state) {
-          if (state is CountriesLoaded) {
-            return buildDetails();
-          } else {
-            return showLoadingIndicator();
-          }
-        },
-      ),
+      body: buildDetails()
     );
   }
 
@@ -42,23 +33,15 @@ class CountryDetailsScreen extends StatelessWidget {
               image: DecorationImage(image: NetworkImage(country.img), fit: BoxFit.cover),
             ),
             child: Text(
-                "Name: ${country.name}\n"
-                    "Gender: ${country.gender}\n"
-                    "Business Unit: ${country.business_unit}\n"
-                    "Hierarchy: ${country.hierarchy}\n"
-                    "Email: ${country.email}\n"
-                    "Mobile Number: ${country.mobile_number}\n"
+              "Name: ${country.name}\n"
+              "Gender: ${country.gender}\n"
+              "Business Unit: ${country.business_unit}\n"
+              "Hierarchy: ${country.hierarchy}\n"
+              "Email: ${country.email}\n"
+              "Mobile Number: ${country.mobile_number}\n"
             ),
           ),
         ]
-    );
-  }
-
-  Widget showLoadingIndicator(){
-    return Center(
-      child: CircularProgressIndicator(
-        color: Colors.black54,
-      ),
     );
   }
 }
