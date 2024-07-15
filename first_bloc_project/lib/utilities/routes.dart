@@ -30,10 +30,7 @@ import 'package:untitled/business_logic/cubit/countries_cubit.dart';
       case countryDetailsScreen:
         final country = settings.arguments as Country;
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => countriesCubit,
-            child: CountryDetailsScreen(country: country,)
-          )
+          builder: (_) => CountryDetailsScreen(country: country)
         );
     }
   }
