@@ -1,1 +1,1 @@
-*Missing the build files
+*Projects are missing the build files
